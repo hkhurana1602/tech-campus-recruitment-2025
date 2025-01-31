@@ -19,27 +19,25 @@ This approach was selected because it efficiently retrieves relevant log entries
 # Steps to Run
 
 1. *Navigate to the Project Directory*
-   sh
+   ```sh
    cd /path/to/tech-campus-recruitment-2025/src
-   
+   ```
 
 2. *Download the Log File*
-   sh
+   ```sh
    wget "https://limewire.com/d/0c95044f-d489-4101-bf1a-ca48839eea86#cVKnm0pKXpN6pjsDwav4f5MNssotyy0C8Xvaor1bA5U" -O log_2024.zip
    unzip log_2024.zip
-   
+   ```
 
 3. *Compile the C++ Program*
-   sh
+   ```sh
    g++ extract_log.cpp -o extract_log
-   
+   ```
 
 4. *Run the Program*
-   sh
+   ```sh
    ./extract_log log_2024.log YYYY-MM-DD
-   
+   ```
 
 5. *Verify Output*
    - The extracted log file should be named output_YYYY-MM-DD.txt and located in the src/ directory.
-
-This ensures that the log extraction runs efficiently using C++ and outputs the processed data correctly.
