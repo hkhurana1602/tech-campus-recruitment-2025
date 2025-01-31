@@ -1,31 +1,22 @@
-#Different approaches that were explored:- 
+# Solutions Considered
 
-I explored the following approaches to efficiently extract logs from a 1 TB log file:
+## Approach 1: Using C++ with Line-by-Line Parsing
+One possible solution was to use C++ to read the log file line by line, check for specific log levels or keywords, and extract relevant information. This method involves manually handling string operations, which can be inefficient and complex.
 
-##1. Naïve Approach (Reading Entire File in Memory)
+## Approach 2: Using C++ with Date-Based Filtering (Final Choice)
+The chosen solution involves filtering log entries based on a given date. The program reads log_2024.log, extracts lines starting with the specified date, and saves them in a separate file. This ensures efficient log extraction without unnecessary processing.
 
-Method: Load the entire file into memory and search for matching lines.
-Issue: This approach is infeasible for a 1 TB file as it would exceed memory limits.
-Line-by-Line Streaming (Efficient Approach - Chosen Solution)
+# Final Solution Summary
+The chosen solution involves:
+- Downloading the log file before execution.
+- Compiling extract_log.cpp using g++.
+- Executing the compiled binary so it reads log_2024.log from src/.
+- Filtering log entries based on a specified date.
+- Storing the extracted logs in the output/ directory.
 
-##2. Line by line streaming (Efficient one)
-Method: Read the file line by line and immediately write matching lines to the output file.
-Benefits:
-Memory Efficient – Reads one line at a time instead of loading the full file.
-Performance – Does not require preprocessing or indexing.
-Scalability – Works well for large files since only one line is stored in memory at a time.
+This approach was selected because it efficiently retrieves relevant log entries and is straightforward to implement.
 
-
-#Why I chose this solution?
-
-I chose the line-by-line streaming approach because:
-
-1. It allows processing a 1 TB log file efficiently without memory overflow.
-2. It scans the file in one pass, writing matched logs to an output file.
-3. The implementation is simple, robust, and portable across platforms.
-
-
-# Steps to run the solution:- 
+# Steps to Run
 
 1. *Navigate to the Project Directory*
    sh
@@ -50,3 +41,5 @@ I chose the line-by-line streaming approach because:
 
 5. *Verify Output*
    - The extracted log file should be named output_YYYY-MM-DD.txt and located in the src/ directory.
+
+This ensures that the log extraction runs efficiently using C++ and outputs the processed data correctly.
